@@ -33,7 +33,7 @@ public class MessageController {
     public ResponseMessage getPrivateMessage(final Message message, final Principal principal) throws InterruptedException{
 
         Thread.sleep(1000);
-        notificationService.sendPrivateGlobalNotification(principal.getName());
+        notificationService.sendPrivateNotification(principal.getName());
         return new ResponseMessage(HtmlUtils.htmlEscape("Sending private message to user"+principal.getName()+": "+message.getMessageContent()));
 
     }

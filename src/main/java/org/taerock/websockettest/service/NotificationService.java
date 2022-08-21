@@ -7,29 +7,22 @@ import org.taerock.websockettest.dto.ResponseMessage;
 
 @Service
 public class NotificationService {
-
     private final SimpMessagingTemplate messagingTemplate;
-
 
     @Autowired
     public NotificationService(SimpMessagingTemplate messagingTemplate) {
         this.messagingTemplate = messagingTemplate;
     }
 
-    public void sendGlobalNotification(){
-
+    public void sendGlobalNotification() {
         ResponseMessage message = new ResponseMessage("Global Notification");
 
-        messagingTemplate.convertAndSend("/topic/global-notification", message);
-
+        messagingTemplate.convertAndSend("/topic/global-notifications", message);
     }
 
-    public void sendPrivateGlobalNotification(final String userId){
-
+    public void sendPrivateNotification(final String userId) {
         ResponseMessage message = new ResponseMessage("Private Notification");
 
-        messagingTemplate.convertAndSendToUser(userId,"/topic/global-notification", message);
-
+        messagingTemplate.convertAndSendToUser(userId,"/topic/private-notifications", message);
     }
-
 }

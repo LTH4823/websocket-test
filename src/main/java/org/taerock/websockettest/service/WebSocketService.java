@@ -29,7 +29,7 @@ public class WebSocketService {
     public void notifyUser(final String id, final String message){
 
         ResponseMessage responseMessage = new ResponseMessage(message);
-        notificationService.sendPrivateGlobalNotification(id);
+        notificationService.sendPrivateNotification(id);
 
         messagingTemplate.convertAndSendToUser(id,"/topic/private-messages",responseMessage);
 
