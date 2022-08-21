@@ -19,8 +19,17 @@ public class WebSocketService {
 
         ResponseMessage responseMessage = new ResponseMessage(message);
 
-        messagingTemplate.convertAndSend("/topic/message",responseMessage);
+        messagingTemplate.convertAndSend("/topic/messages",responseMessage);
 
     }
+
+    public void notifyUser(final String id, final String message){
+
+        ResponseMessage responseMessage = new ResponseMessage(message);
+
+        messagingTemplate.convertAndSendToUser(id,"/topic/private-messages",responseMessage);
+
+    }
+
 
 }
