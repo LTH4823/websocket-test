@@ -1,0 +1,26 @@
+
+#the-canvas {
+    max-width: 500px;
+}
+
+.pdfArea {
+    height: 500px;
+}
+
+.conImg {
+    width: calc(100% - 10%);
+    height: 500px;
+}
+
+.chatArea {
+    height: 600px;
+    background-color: aqua;
+}
+
+.workerSign {
+    border: 0.1em solid black;
+}
+
+.requesterSign {
+    border: 0.1em solid black;
+}
