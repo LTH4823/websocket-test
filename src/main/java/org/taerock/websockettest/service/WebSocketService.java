@@ -5,10 +5,12 @@ import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
 import org.taerock.websockettest.dto.ResponseMessage;
 
+//웹소켓 채팅 서비스
 @Service
 public class WebSocketService {
 
     private final SimpMessagingTemplate messagingTemplate;
+    //비밀글 서비스 선언
     private final NotificationService notificationService;
 
     @Autowired

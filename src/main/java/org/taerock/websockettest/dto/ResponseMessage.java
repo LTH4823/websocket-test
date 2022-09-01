@@ -11,6 +11,4 @@ public class ResponseMessage {
 
     private String messageContent;
 
-
-
 }
